@@ -1,0 +1,93 @@
+@startuml BaoziStoreAPI_UseCase
+
+'==========================
+' Layout
+'==========================
+left to right direction
+skinparam dpi 200
+skinparam shadowing false
+skinparam BackgroundColor white
+
+'==========================
+' Fonts
+'==========================
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 14
+
+'==========================
+' Actor
+'==========================
+skinparam actor {
+    Style awesome
+    BorderColor #1F4E79
+    FontColor #1F4E79
+}
+
+'==========================
+' System
+'==========================
+skinparam rectangle {
+    BorderColor #1F4E79
+    BackgroundColor #F8F9FA
+    RoundCorner 15
+}
+
+'==========================
+' Use Cases
+'==========================
+skinparam usecase {
+    BackgroundColor White
+    BorderColor #1F4E79
+    FontColor Black
+    ArrowColor #1F4E79
+    RoundCorner 20
+}
+
+title
+<b>Baozi Store API</b>
+Use Case Diagram
+end title
+
+actor "Usuário" as User
+
+rectangle "Baozi Store API" {
+
+    package "Clientes" {
+
+        usecase "Cadastrar\nCliente" as UC1
+        usecase "Consultar\nCliente" as UC2
+        usecase "Excluir\nCliente" as UC3
+
+    }
+
+    package "Produtos" {
+
+        usecase "Cadastrar\nProduto" as UC4
+        usecase "Consultar\nProduto" as UC5
+        usecase "Excluir\nProduto" as UC6
+
+    }
+
+    package "Pedidos" {
+
+        usecase "Cadastrar\nPedido" as UC7
+        usecase "Consultar\nPedido" as UC8
+        usecase "Excluir\nPedido" as UC9
+
+    }
+
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+
+User --> UC4
+User --> UC5
+User --> UC6
+
+User --> UC7
+User --> UC8
+User --> UC9
+
+@enduml
